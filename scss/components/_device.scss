@@ -1,0 +1,85 @@
+.blog {
+	padding-top: 70px;
+	position: relative;
+	&__wrapper {
+		min-height: 550px;
+		display: flex;
+	}
+	&__img {
+		width: 40%;
+		img {
+			position: absolute;
+			height: 500px;
+			max-width: 350px;
+			bottom: 0;
+		}
+	}
+	&__content {
+		width: 58%;
+		align-self: center;
+		&-title {
+			@include h2-size();
+		}
+		&-text {
+			@include p;
+			text-align: left;
+		}
+	}
+	&__list {
+		color: #8c8c8c;
+		font-size: 16px;
+		font-family: Montserrat;
+		&-item {
+			line-height: 32px;
+			&::before {
+				content: "";
+				background-image: url("/images/Devices/arrow-right.png");
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				background-size: cover;
+				margin-right: 30px;
+				vertical-align: middle;
+			}
+		}
+	}
+	&__info {
+		background: linear-gradient(90deg, rgba(34, 28, 26, 1) 0%, rgba(77, 51, 38, 1) 100%);
+		&-item {
+			position: relative;
+			width: 19%;
+			padding: 50px 0px;
+			color: #fff;
+			font-size: 48px;
+			margin: 30px 0px 20px 0px;
+			font-family: Montserrat;
+			font-weight: 400;
+			&:after {
+				@include bottom-line();
+				margin-top: 10px;
+			}
+		}
+		&-box {
+			display: flex;
+			justify-content: space-between;
+			color: #fff;
+			text-align: center;
+			align-items: center;
+			.info-item {
+				color: #fff;
+				font-size: 48px;
+				margin: 30px 0px 20px 0px;
+				font-family: Montserrat;
+				font-weight: 400;
+			}
+			.info__text {
+				color: #988672;
+				font-size: 14px;
+				text-transform: uppercase;
+				margin: 0px 0px 30px 0px;
+				font-family: Montserrat;
+				font-weight: 600;
+			}
+		}
+	}
+}

@@ -1,0 +1,134 @@
+.header-image {
+	user-select: none;
+	width: 100%;
+	height: 100vh;
+	&::before {
+		@include background-hover();
+	}
+	&__info {
+		color: #fff;
+		text-align: center;
+		max-width: 590px;
+		position: absolute;
+		left: calc(50% - 300px);
+		right: 0;
+		top: calc(50% - 120px);
+		z-index: 1001;
+		&-title {
+			font-size: 38px;
+			font-weight: 500;
+			margin: 0px;
+			font-family: Raleway;
+		}
+		&-subtitle {
+			font-size: 52px;
+			font-weight: 700;
+			margin: 18px 0px;
+			font-family: Raleway;
+		}
+		&-text {
+			margin: 0px;
+			padding-top: 10px;
+			font-size: 15.5px;
+			font-family: Montserrat;
+			font-weight: 400;
+			text-align: center;
+		}
+		&-btn {
+			margin-top: 50px;
+			display: inline-block;
+			transition: linear 0.1s;
+			&:active {
+				transform: translate(0px, 5px);
+			}
+		}
+		a {
+			@include button($mt);
+		}
+	}
+}
+
+//Slider
+.header-image {
+	&__slider-wrapper {
+		position: relative;
+		overflow: hidden;
+		user-select: none;
+	}
+
+	&__slider-list {
+		position: relative;
+		width: calc(100% * 5);
+		top: 0;
+		left: 0;
+		padding: 0;
+		transition: all 1.5s;
+	}
+	&__slider-list li {
+		width: calc(100% / 5);
+		list-style: none;
+		display: inline;
+		float: left;
+	}
+}
+.slider-list__item {
+	height: 100vh;
+	width: 100%;
+}
+.slider-btn__prev,
+.slider-btn__next {
+	z-index: 1001;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: calc(50% - 25px);
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	cursor: pointer;
+	user-select: none;
+}
+.prev {
+	transform: rotate(135deg);
+	left: 25px;
+}
+.next {
+	transform: rotate(-45deg);
+	right: 25px;
+}
+
+//Adaptive
+@media (max-width: 896px) {
+	.header-image__info {
+		color: #fff;
+		text-align: center;
+		max-width: 590px;
+		position: absolute;
+		left: calc(50% - 300px);
+		right: 0;
+		top: calc(50% - 70px);
+		z-index: 1001;
+	}
+	.header-image__info-title {
+		font-size: 22px;
+		margin-bottom: 12px;
+	}
+	.header-image__info-subtitle {
+		font-size: 30px;
+		margin: 9px 0px;
+	}
+	.header-image__info-text {
+		margin: 8px 0;
+		font-size: 15px;
+		line-height: 1.5;
+	}
+	.header-image__info-btn {
+		margin-top: 30px;
+	}
+	.slider-btn__prev,
+	.slider-btn__next {
+		width: 30px;
+		height: 30px;
+	}
+}
